@@ -9,7 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Prompt',sans-serif;background:#fdf6ec;color:#4a3f35;line-height:1.6;transition:background .3s,color .3s}
+body{font-family:'Prompt',sans-serif;background:#fdf6ec;color:#4a3f35;line-height:1.6}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 .section{max-width:1000px;margin:0 auto;padding:72px 20px}
@@ -35,8 +35,6 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .logo span{color:#7fae60;font-size:.75rem;letter-spacing:2px;margin-left:6px}
 .nav-links{display:flex;gap:22px;font-size:.95rem}
 .nav-links a:hover{color:#2f7a3d}
-.nav-actions{display:flex;align-items:center;gap:8px}
-.theme-btn{background:none;border:none;font-size:1.2rem;cursor:pointer}
 .menu-btn{display:none;font-size:1.4rem;background:none;border:none;cursor:pointer}
 @media(max-width:760px){
   .menu-btn{display:block}
@@ -59,8 +57,8 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .stats strong{color:#2f7a3d;font-size:1.3rem;display:block}
 .stats span{font-size:.8rem;color:#7a6f63}
 .hero-img{position:relative}
-.img-card{background:linear-gradient(135deg,#fff3d6,#ffe9a8);border-radius:24px;aspect-ratio:4/5;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.1)}
-.hero-photo{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.img-card{background:linear-gradient(135deg,#fff3d6,#ffe9a8);border-radius:24px;height:auto;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.1)}
+.hero-photo{width:100%;height:100%;object-fit:cover;border-radius:24px;transition:transform .4s}
 .img-card:hover .hero-photo{transform:scale(1.05)}
 .float-badge{position:absolute;background:#fff;padding:8px 16px;border-radius:999px;font-size:.85rem;box-shadow:0 6px 14px rgba(0,0,0,.12)}
 .float-badge.top{top:14px;right:-8px}
@@ -73,10 +71,9 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 .p-card{background:#fffdf7;border-radius:20px;padding:16px;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.07);transition:transform .25s,box-shadow .25s}
 .p-card:hover{transform:translateY(-4px);box-shadow:0 10px 26px rgba(0,0,0,.12)}
-.p-img{border-radius:16px;height:200px;overflow:hidden;background:var(--bg,#fff3d6)}
-.product-photo{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.p-img{border-radius:16px;height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg,#fff3d6)}
+.product-photo{width:100%;height:100%;object-fit:cover;border-radius:16px;transition:transform .4s}
 .p-card:hover .product-photo{transform:scale(1.08)}
-.zoomable{cursor:zoom-in}
 .p-tag{position:absolute;top:26px;left:26px;background:#f5c451;color:#6b4a12;font-size:.75rem;padding:4px 10px;border-radius:999px;font-weight:600}
 .p-card h3{text-align:left;font-size:1.05rem;margin:12px 0 4px}
 .p-card p{font-size:.85rem;color:#7a6f63;min-height:44px}
@@ -88,13 +85,6 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .why-card{background:#fffdf7;border-radius:18px;padding:24px 18px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.06)}
 .why-card .ic{font-size:40px}
 .story-box{max-width:720px;margin:20px auto 0;background:#fffdf7;border-radius:20px;padding:32px;box-shadow:0 6px 18px rgba(0,0,0,.07)}
-
-/* ===== รีวิว ===== */
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
-.review-card{background:#fffdf7;border-radius:18px;padding:22px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:left}
-.review-card .stars{color:#f5c451;letter-spacing:2px;margin-bottom:8px}
-.review-card p{font-size:.9rem;color:#7a6f63}
-.review-card .who{margin-top:10px;font-size:.85rem;font-weight:600;color:#2f7a3d}
 
 /* ===== ขั้นตอนสั่งซื้อ ===== */
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
@@ -110,39 +100,6 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 
 /* ===== Footer ===== */
 footer{padding:28px;text-align:center;color:#7a6f63;font-size:.9rem}
-
-/* ===== ปุ่ม Line ลอย ===== */
-.line-float{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#06c755;color:#fff;font-size:1.6rem;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:150;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-
-/* ===== Lightbox ===== */
-.lightbox{position:fixed;inset:0;background:rgba(20,15,8,.88);backdrop-filter:blur(4px);z-index:200;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:24px}
-.lightbox[hidden]{display:none}
-.lightbox img{max-width:min(92vw,720px);max-height:78vh;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.lb-close{position:absolute;top:18px;right:18px;width:44px;height:44px;border-radius:50%;border:none;background:#fff;color:#4a3f35;font-size:1.2rem;cursor:pointer}
-.lb-hint{color:#fff;opacity:.8;margin-top:14px;font-size:.85rem}
-
-/* ===== Dark Mode ===== */
-body.dark{background:#241e16;color:#efe6d8}
-body.dark header{background:rgba(36,30,22,.95)}
-body.dark .nav-links a{color:#d8cbb6}
-@media(max-width:760px){body.dark .nav-links{background:#241e16}}
-body.dark .alt{background:#2c251c}
-body.dark .badge,body.dark .qz-badge{background:#3a3122;color:#e8c877}
-body.dark .sub,body.dark .hero p,body.dark .p-card p,body.dark .step p,body.dark .stats span,body.dark .qz-head p,body.dark .qz-result p,body.dark footer,body.dark .review-card p{color:#b5a894}
-body.dark .hl{color:#a5d18a}
-body.dark .filter-btn{background:#332b21;border-color:#4a4033;color:#efe6d8}
-body.dark .filter-btn.active{background:#7fae60;border-color:#7fae60;color:#fff}
-body.dark .p-card,body.dark .why-card,body.dark .story-box,body.dark .step,body.dark .qz-card,body.dark .review-card{background:#332b21}
-body.dark .p-foot strong,body.dark .stats strong{color:#a5d18a}
-body.dark .btn-outline{border-color:#8fbf70;color:#a5d18a}
-body.dark .float-badge{background:#332b21;color:#efe6d8}
-body.dark .qz-option{background:#332b21;border-color:#4a4033;color:#efe6d8}
-body.dark .qz-btn-retry{background:#4a4033;color:#efe6d8}
-body.dark .qz-product{background:#3a3122;color:#e8c877}
-body.dark .qz-note{color:#a5d18a}
-body.dark .qz-bar{background:#4a4033}
-body.dark .review-card .who{color:#a5d18a}
 
 /* ===== AI Quiz ===== */
 .qz-section{max-width:720px;margin:64px auto;padding:0 16px;text-align:center}
@@ -179,16 +136,12 @@ body.dark .review-card .who{color:#a5d18a}
     <nav class="nav-links" id="navLinks">
       <a href="#home">หน้าแรก</a>
       <a href="#products">สินค้า</a>
-      <a href="#reviews">รีวิว</a>
       <a href="#why">ทำไมต้องเรา</a>
       <a href="#story">เรื่องราวของเรา</a>
       <a href="#quiz">✨ ทดสอบนิสัย</a>
       <a href="#contact">ติดต่อ</a>
     </nav>
-    <div class="nav-actions">
-      <button class="theme-btn" id="themeBtn" aria-label="สลับโหมดมืด">🌙</button>
-      <button class="menu-btn" id="menuBtn" aria-label="เปิดเมนู">☰</button>
-    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="เปิดเมนู">☰</button>
   </div>
 </header>
 
@@ -210,7 +163,7 @@ body.dark .review-card .who{color:#a5d18a}
   </div>
   <div class="hero-img">
     <div class="img-card">
-      <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="hero-photo zoomable">
+      <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="hero-photo">
     </div>
     <span class="float-badge top">🌼 ไม่เหี่ยว ไม่ต้องรดน้ำ</span>
     <span class="float-badge bottom">💛 ถักด้วยมือโดยแม่</span>
@@ -231,79 +184,67 @@ body.dark .review-card .who{color:#a5d18a}
     <button class="filter-btn" data-filter="card">💌 การ์ด</button>
   </div>
   <div class="grid">
+    <!-- 1. กระถางทานตะวัน -->
     <div class="p-card" data-cat="pot">
       <div class="p-img" style="--bg:#fff3d6">
-        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="product-photo zoomable">
+        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="product-photo">
       </div>
       <span class="p-tag">⭐ ขายดี</span>
       <h3>แดดอุ่น — กระถางทานตะวัน</h3>
       <p>ทานตะวัน • ทิวลิปเหลือง • เดซี่ ในกระถางเซรามิกหุ้มถัก</p>
       <div class="p-foot"><strong>฿590</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
     </div>
+
+    <!-- 2. กล่องใส -->
     <div class="p-card" data-cat="box">
       <div class="p-img" style="--bg:#f4f9ef">
-        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="กล่องของขวัญ" class="product-photo zoomable">
+        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="กล่องของขวัญ" class="product-photo">
       </div>
       <span class="p-tag">🎁 กล่องอะคริลิก</span>
       <h3>ของขวัญพิเศษ — กล่องใส</h3>
       <p>ทานตะวัน + ทิวลิปเหลืองในกล่องใส พร้อมโบ มอบได้ทันที</p>
       <div class="p-foot"><strong>฿890</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
     </div>
+
+    <!-- 3. ช่อดอกฟ้า -->
     <div class="p-card" data-cat="bouquet">
       <div class="p-img" style="--bg:#e8f1fb">
-        <img src="https://i.ibb.co/TD27dvCb/IMG-3734.jpg" alt="ช่อดอกไม้สีฟ้า" class="product-photo zoomable">
+        <img src="https://i.ibb.co/TD27dvCb/IMG-3734.jpg" alt="ช่อดอกไม้สีฟ้า" class="product-photo">
       </div>
       <span class="p-tag">💙 ช่อแนะนำ</span>
       <h3>ท้องฟ้า — ช่อดอกฟ้า</h3>
       <p>ทิวลิปฟ้า • เดซี่ • ดอกเล็ก ห่อกระดาษโทนฟ้า-ขาว</p>
       <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
     </div>
+
+    <!-- 4. ช่อดอกบัวชมพู -->
     <div class="p-card" data-cat="bouquet">
       <div class="p-img" style="--bg:#fdeef9">
-        <img src="https://i.ibb.co/rK44sXgs/IMG-3737.jpg" alt="ช่อดอกไม้สีชมพู" class="product-photo zoomable">
+        <img src="https://i.ibb.co/rK44sXgs/IMG-3737.jpg" alt="ช่อดอกไม้สีชมพู" class="product-photo">
       </div>
       <h3>ชมพูอ่อน — ช่อดอกบัว</h3>
       <p>ดอกบัวถักสีชมพูอ่อน นุ่มละมุน พร้อมริบบิ้น</p>
       <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
     </div>
+
+    <!-- 5. เดซี่ก้านเดียว -->
     <div class="p-card" data-cat="single">
       <div class="p-img" style="--bg:#fdf6ec">
-        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="ดอกเดซี่" class="product-photo zoomable">
+        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="ดอกเดซี่" class="product-photo">
       </div>
       <h3>เดซี่เดียว — ดอกเดซี่ก้านเดียว</h3>
       <p>ดอกเดซี่ขาวถัก ก้านหุ้มเขียว มอบง่าย ให้ได้ทุกโอกาส</p>
       <div class="p-foot"><strong>฿190</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
     </div>
+
+    <!-- 6. การ์ดดอกไม้ -->
     <div class="p-card" data-cat="card">
       <div class="p-img" style="--bg:#fff3d6">
-        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="การ์ดดอกไม้" class="product-photo zoomable">
+        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="การ์ดดอกไม้" class="product-photo">
       </div>
       <h3>การ์ดดอกไม้ถัก</h3>
       <p>การ์ดอวยพรติดดอกไม้ถักดอกเล็ก เขียนข้อความได้</p>
       <div class="p-foot"><strong>฿120</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== รีวิว ===== -->
-<section id="reviews" class="section">
-  <p class="eyebrow">REVIEWS</p>
-  <h2>เสียงจากคนพิเศษ</h2>
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"สั่งกระถางทานตะวันให้แม่ในวันเกิด แม่ชอบมาก บอกว่าสวยกว่าในรูปอีก งานถักละเอียดมากค่ะ"</p>
-      <div class="who">— น้องพลอย</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"ช่อสีฟ้าคือสวยตะโกน! ให้เพื่อนวันรับปริญญา เพื่อนกรี๊ดมาก เก็บไว้ได้ไม่เหี่ยว ความทรงจำอยู่ยาวเลยค่ะ"</p>
-      <div class="who">— พี่ฟ้า</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"ส่งของไว แพ็กแน่นมาก แถมได้การ์ดเขียนมือด้วย สัมผัสได้ถึงความตั้งใจจริง จะสั่งอีกแน่นอนค่ะ"</p>
-      <div class="who">— คุณเมย์</div>
     </div>
   </div>
 </section>
@@ -386,16 +327,6 @@ body.dark .review-card .who{color:#a5d18a}
 
 <footer><p>© <span id="year"></span> แม่ตา Craft & Flower — ทำด้วย 💛 เพื่อแม่</p></footer>
 
-<!-- ปุ่ม Line ลอย -->
-<a class="line-float" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" aria-label="ทัก Line">💬</a>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" hidden>
-  <button class="lb-close" id="lbClose" aria-label="ปิด">✕</button>
-  <img id="lightboxImg" src="" alt="รูปขยาย">
-  <p class="lb-hint">แตะที่พื้นมืดเพื่อปิด</p>
-</div>
-
 <script>
 // ===== พื้นฐาน =====
 document.getElementById('year').textContent = new Date().getFullYear();
@@ -414,25 +345,6 @@ document.getElementById('menuBtn').addEventListener('click', () => {
 document.querySelectorAll('.nav-links a').forEach(a =>
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
 );
-
-// ===== Dark Mode =====
-const themeBtn = document.getElementById('themeBtn');
-themeBtn.addEventListener('click', () => {
-  const dark = document.body.classList.toggle('dark');
-  themeBtn.textContent = dark ? '☀️' : '🌙';
-});
-
-// ===== Lightbox ซูมรูป =====
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightboxImg');
-document.querySelectorAll('.zoomable').forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src;
-    lightbox.hidden = false;
-  });
-});
-document.getElementById('lbClose').addEventListener('click', () => lightbox.hidden = true);
-lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.hidden = true; });
 
 // ===== กรองสินค้า =====
 document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -558,7 +470,6 @@ qzStart();
 </script>
 </body>
 </html>
-
 
 
 
