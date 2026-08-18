@@ -4,15 +4,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>แม่ตา Craft & Flower — ดอกไม้กำมะหยี่ handmade</title>
+<title>แม่ตา Craft & Flower — Handmade Velvet Flowers</title>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZCDKRSK7K"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-7ZCDKRSK7K');
 </script>
 
@@ -46,7 +45,10 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .nav-links{display:flex;gap:22px;font-size:.95rem}
 .nav-links a:hover{color:#2f7a3d}
 .nav-actions{display:flex;align-items:center;gap:8px}
-.theme-btn{background:none;border:none;font-size:1.2rem;cursor:pointer}
+.icon-btn{background:none;border:none;font-size:1.1rem;cursor:pointer;padding:6px 10px;border-radius:999px;transition:background .2s}
+.icon-btn:hover{background:rgba(0,0,0,.06)}
+.lang-btn{font-weight:700;font-size:.85rem;border:2px solid #7fae60;color:#2f7a3d;padding:4px 12px}
+.lang-btn:hover{background:#7fae60;color:#fff}
 .menu-btn{display:none;font-size:1.4rem;background:none;border:none;cursor:pointer}
 @media(max-width:760px){
   .menu-btn{display:block}
@@ -96,12 +98,6 @@ header{position:fixed;top:0;left:0;right:0;background:rgba(253,246,236,.95);back
 .why-card .ic{font-size:40px}
 .story-box{max-width:720px;margin:20px auto 0;background:#fffdf7;border-radius:20px;padding:32px;box-shadow:0 6px 18px rgba(0,0,0,.07)}
 
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:24px}
-.review-card{background:#fffdf7;border-radius:18px;padding:22px;box-shadow:0 6px 16px rgba(0,0,0,.06);text-align:left}
-.review-card .stars{color:#f5c451;letter-spacing:2px;margin-bottom:8px}
-.review-card p{font-size:.9rem;color:#7a6f63}
-.review-card .who{margin-top:10px;font-size:.85rem;font-weight:600;color:#2f7a3d}
-
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
 .step{background:#fffdf7;border-radius:18px;padding:24px 16px;text-align:center;box-shadow:0 6px 16px rgba(0,0,0,.06)}
 .step span{width:36px;height:36px;border-radius:50%;background:#f5c451;color:#6b4a12;font-weight:700;display:inline-flex;align-items:center;justify-content:center;margin-bottom:10px}
@@ -129,11 +125,11 @@ body.dark .nav-links a{color:#d8cbb6}
 @media(max-width:760px){body.dark .nav-links{background:#241e16}}
 body.dark .alt{background:#2c251c}
 body.dark .badge,body.dark .qz-badge{background:#3a3122;color:#e8c877}
-body.dark .sub,body.dark .hero p,body.dark .p-card p,body.dark .step p,body.dark .stats span,body.dark .qz-head p,body.dark .qz-result p,body.dark footer,body.dark .review-card p{color:#b5a894}
+body.dark .sub,body.dark .hero p,body.dark .p-card p,body.dark .step p,body.dark .stats span,body.dark .qz-head p,body.dark .qz-result p,body.dark footer{color:#b5a894}
 body.dark .hl{color:#a5d18a}
 body.dark .filter-btn{background:#332b21;border-color:#4a4033;color:#efe6d8}
 body.dark .filter-btn.active{background:#7fae60;border-color:#7fae60;color:#fff}
-body.dark .p-card,body.dark .why-card,body.dark .story-box,body.dark .step,body.dark .qz-card,body.dark .review-card{background:#332b21}
+body.dark .p-card,body.dark .why-card,body.dark .story-box,body.dark .step,body.dark .qz-card{background:#332b21}
 body.dark .p-foot strong,body.dark .stats strong{color:#a5d18a}
 body.dark .btn-outline{border-color:#8fbf70;color:#a5d18a}
 body.dark .float-badge{background:#332b21;color:#efe6d8}
@@ -142,7 +138,9 @@ body.dark .qz-btn-retry{background:#4a4033;color:#efe6d8}
 body.dark .qz-product{background:#3a3122;color:#e8c877}
 body.dark .qz-note{color:#a5d18a}
 body.dark .qz-bar{background:#4a4033}
-body.dark .review-card .who{color:#a5d18a}
+body.dark .icon-btn{color:#efe6d8}
+body.dark .icon-btn:hover{background:rgba(255,255,255,.08)}
+body.dark .lang-btn{border-color:#8fbf70;color:#a5d18a}
 
 .qz-section{max-width:720px;margin:64px auto;padding:0 16px;text-align:center}
 .qz-badge{background:#fff3d6;color:#8a5a19;padding:6px 14px;border-radius:999px;font-size:.85rem}
@@ -173,166 +171,144 @@ body.dark .review-card .who{color:#a5d18a}
 
 <header id="navbar">
   <div class="nav-inner">
-    <a href="#home" class="logo">🌻 แม่ตา <span>CRAFT & FLOWER</span></a>
+    <a href="#home" class="logo">🌻 <span data-th="แม่ตา" data-en="Mae Ta">แม่ตา</span> <span>CRAFT & FLOWER</span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#home">หน้าแรก</a>
-      <a href="#products">สินค้า</a>
-      <a href="#reviews">รีวิว</a>
-      <a href="#why">ทำไมต้องเรา</a>
-      <a href="#story">เรื่องราวของเรา</a>
-      <a href="#quiz">✨ ทดสอบนิสัย</a>
-      <a href="#contact">ติดต่อ</a>
+      <a href="#home" data-th="หน้าแรก" data-en="Home">หน้าแรก</a>
+      <a href="#products" data-th="สินค้า" data-en="Products">สินค้า</a>
+      <a href="#why" data-th="ทำไมต้องเรา" data-en="Why Us">ทำไมต้องเรา</a>
+      <a href="#story" data-th="เรื่องราวของเรา" data-en="Our Story">เรื่องราวของเรา</a>
+      <a href="#quiz" data-th="✨ ทดสอบนิสัย" data-en="✨ Personality Quiz">✨ ทดสอบนิสัย</a>
+      <a href="#contact" data-th="ติดต่อ" data-en="Contact">ติดต่อ</a>
     </nav>
     <div class="nav-actions">
-      <button class="theme-btn" id="themeBtn" aria-label="สลับโหมดมืด">🌙</button>
-      <button class="menu-btn" id="menuBtn" aria-label="เปิดเมนู">☰</button>
+      <button class="icon-btn lang-btn" id="langBtn" aria-label="Switch Language">EN</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle Dark Mode">🌙</button>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     </div>
   </div>
 </header>
 
 <section class="hero" id="home">
   <div>
-    <span class="badge">🌸 แฮนด์เมด • ทุกช่อทำด้วยมือด้วยใจ</span>
-    <h1>ดอกไม้กำมะหยี่<br>ด้วย<span class="hl">ความรัก</span>เพื่อคุณ</h1>
-    <p>ทานตะวัน ทิวลิป เดซี่ — ทุกดอกไม้ทำอย่างตั้งใจด้วยมือของแม่ ไม่เหี่ยวเฉา เก็บไว้ได้หลายปี เหมาะเป็นของขวัญให้คนพิเศษ</p>
+    <span class="badge" data-th="🌸 แฮนด์เมด • ทุกช่อทำด้วยมือด้วยใจ" data-en="🌸 Handmade • Crafted with Love"> แฮนด์เมด • ทุกช่อทำด้วยมือด้วยใจ</span>
+    <h1 data-th-html="ดอกไม้กำมะหยี่<br>ด้วย<span class='hl'>ความรัก</span>เพื่อคุณ" data-en-html="Velvet Flowers<br>Made with <span class='hl'>Love</span> for You">ดอกไม้กำมะหยี่<br>ด้วย<span class="hl">ความรัก</span>เพื่อคุณ</h1>
+    <p data-th="ทานตะวัน ทิวลิป เดซี่ — ทุกดอกไม้ทำอย่างตั้งใจด้วยมือของแม่ ไม่เหี่ยวเฉา เก็บไว้ได้หลายปี เหมาะเป็นของขวัญให้คนพิเศษ" data-en="Sunflowers, Tulips, Daisies — Every flower is carefully handcrafted by Mae (Mom). Never wilts, lasts for years. Perfect gift for your special ones.">ทานตะวัน ทิวลิป เดซี่ — ทุกดอกไม้ทำอย่างตั้งใจด้วยมือของแม่ ไม่เหี่ยวเฉา เก็บไว้ได้หลายปี เหมาะเป็นของขวัญให้คนพิเศษ</p>
     <div class="hero-btns">
-      <a class="btn btn-yellow" href="#products">ชมสินค้าทั้งหมด</a>
-      <a class="btn btn-outline" href="#story">เรื่องราวของเรา</a>
+      <a class="btn btn-yellow" href="#products" data-th="ชมสินค้าทั้งหมด" data-en="View All Products">ชมสินค้าทั้งหมด</a>
+      <a class="btn btn-outline" href="#story" data-th="เรื่องราวของเรา" data-en="Our Story">เรื่องราวของเรา</a>
     </div>
     <div class="stats">
-      <div><strong>100+</strong><span>ชิ้นงานที่ส่งมอบ</span></div>
-      <div><strong>100%</strong><span>ทำมือทุกขั้นตอน</span></div>
-      <div><strong>∞</strong><span>ปีไม่เหี่ยวเฉา</span></div>
+      <div><strong>100+</strong><span data-th="ชิ้นงานที่ส่งมอบ" data-en="Items Delivered">ชิ้นงานที่ส่งมอบ</span></div>
+      <div><strong>100%</strong><span data-th="ทำมือทุกขั้นตอน" data-en="Handmade">ทำมือทุกขั้นตอน</span></div>
+      <div><strong>∞</strong><span data-th="ปีไม่เหี่ยวเฉา" data-en="Years Never Wilts">ปีไม่เหี่ยวเฉา</span></div>
     </div>
   </div>
   <div class="hero-img">
     <div class="img-card">
-      <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="hero-photo zoomable">
+      <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="Sunflower pot" class="hero-photo zoomable">
     </div>
-    <span class="float-badge top">🌼 ไม่เหี่ยว ไม่ต้องรดน้ำ</span>
-    <span class="float-badge bottom">💛 ทำด้วยมือโดยแม่</span>
+    <span class="float-badge top" data-th="🌼 ไม่เหี่ยว ไม่ต้องรดน้ำ" data-en=" Never Wilts, No Watering">🌼 ไม่เหี่ยว ไม่ต้องรดน้ำ</span>
+    <span class="float-badge bottom" data-th="💛 ทำด้วยมือโดยแม่" data-en="💛 Handmade by Mae">💛 ทำด้วยมือโดยแม่</span>
   </div>
 </section>
 
 <section id="products" class="section">
-  <p class="eyebrow">OUR PRODUCTS</p>
-  <h2>ทุกแบบ ทำด้วยใจ</h2>
-  <p class="sub">เลือกแบบที่ชอบ หรือสั่งทำสีพิเศษได้ตามใจนะ</p>
+  <p class="eyebrow" data-th="สินค้าของเรา" data-en="OUR PRODUCTS">สินค้าของเรา</p>
+  <h2 data-th="ทุกแบบ ทำด้วยใจ" data-en="Every Design, Made with Care">ทุกแบบ ทำด้วยใจ</h2>
+  <p class="sub" data-th="เลือกแบบที่ชอบ หรือสั่งทำสีพิเศษได้ตามใจนะ" data-en="Choose your favorite style, or request custom colors">เลือกแบบที่ชอบ หรือสั่งทำสีพิเศษได้ตามใจนะ</p>
   <div class="filters">
-    <button class="filter-btn active" data-filter="all">ทั้งหมด</button>
-    <button class="filter-btn" data-filter="pot">🌻 กระถาง</button>
-    <button class="filter-btn" data-filter="bouquet">💐 ช่อดอกไม้</button>
-    <button class="filter-btn" data-filter="single">🌼 ดอกเดี่ยว</button>
-    <button class="filter-btn" data-filter="box"> กล่องอะคริลิก</button>
-    <button class="filter-btn" data-filter="card">💌 การ์ด</button>
+    <button class="filter-btn active" data-filter="all" data-th="ทั้งหมด" data-en="All">ทั้งหมด</button>
+    <button class="filter-btn" data-filter="pot" data-th="🌻 กระถาง" data-en="🌻 Pots">🌻 กระถาง</button>
+    <button class="filter-btn" data-filter="bouquet" data-th="💐 ช่อดอกไม้" data-en="💐 Bouquets">💐 ช่อดอกไม้</button>
+    <button class="filter-btn" data-filter="single" data-th="🌼 ดอกเดี่ยว" data-en="🌼 Single">🌼 ดอกเดี่ยว</button>
+    <button class="filter-btn" data-filter="box" data-th=" กล่องอะคริลิก" data-en="🎁 Acrylic Box">🎁 กล่องอะคริลิก</button>
+    <button class="filter-btn" data-filter="card" data-th="💌 การ์ด" data-en="💌 Cards">💌 การ์ด</button>
   </div>
   <div class="grid">
     <div class="p-card" data-cat="pot">
       <div class="p-img" style="--bg:#fff3d6">
-        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="กระถางทานตะวัน" class="product-photo zoomable">
+        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="Sunflower pot" class="product-photo zoomable">
       </div>
-      <span class="p-tag">⭐ ขายดี</span>
-      <h3>แดดอุ่น — กระถางทานตะวัน</h3>
-      <p>ทานตะวัน • ทิวลิปเหลือง • เดซี่ ในกระถางเซรามิกหุ้มกำมะหยี่</p>
-      <div class="p-foot"><strong>฿590</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
+      <span class="p-tag" data-th="⭐ ขายดี" data-en="⭐ Bestseller">⭐ ขายดี</span>
+      <h3 data-th="แดดอุ่น — กระถางทานตะวัน" data-en="Sunshine — Sunflower Pot">แดดอุ่น — กระถางทานตะวัน</h3>
+      <p data-th="ทานตะวัน • ทิวลิปเหลือง • เดซี่ ในกระถางเซรามิกหุ้มกำมะหยี่" data-en="Sunflowers • Yellow Tulips • Daisies in ceramic pot wrapped with velvet">ทานตะวัน • ทิวลิปเหลือง • เดซี่ ในกระถางเซรามิกหุ้มกำมะหยี่</p>
+      <div class="p-foot"><strong>฿590</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
     <div class="p-card" data-cat="box">
       <div class="p-img" style="--bg:#f4f9ef">
-        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="กล่องของขวัญ" class="product-photo zoomable">
+        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="Gift box" class="product-photo zoomable">
       </div>
-      <span class="p-tag">🎁 กล่องอะคริลิก</span>
-      <h3>ของขวัญพิเศษ — กล่องใส</h3>
-      <p>ทานตะวัน + ทิวลิปเหลืองในกล่องใส พร้อมโบ มอบได้ทันที</p>
-      <div class="p-foot"><strong>฿890</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
+      <span class="p-tag" data-th=" กล่องอะคริลิก" data-en="🎁 Acrylic Box">🎁 กล่องอะคริลิก</span>
+      <h3 data-th="ของขวัญพิเศษ — กล่องใส" data-en="Special Gift — Clear Box">ของขวัญพิเศษ — กล่องใส</h3>
+      <p data-th="ทานตะวัน + ทิวลิปเหลืองในกล่องใส พร้อมโบ มอบได้ทันที" data-en="Sunflowers + Yellow Tulips in clear acrylic box with ribbon, ready to give">ทานตะวัน + ทิวลิปเหลืองในกล่องใส พร้อมโบ มอบได้ทันที</p>
+      <div class="p-foot"><strong>฿890</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
     <div class="p-card" data-cat="bouquet">
       <div class="p-img" style="--bg:#e8f1fb">
-        <img src="https://i.ibb.co/TD27dvCb/IMG-3734.jpg" alt="ช่อดอกไม้สีฟ้า" class="product-photo zoomable">
+        <img src="https://i.ibb.co/TD27dvCb/IMG-3734.jpg" alt="Blue bouquet" class="product-photo zoomable">
       </div>
-      <span class="p-tag">💙 ช่อแนะนำ</span>
-      <h3>ท้องฟ้า — ช่อดอกฟ้า</h3>
-      <p>ทิวลิปฟ้า • เดซี่ • ดอกเล็ก ห่อกระดาษโทนฟ้า-ขาว</p>
-      <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
+      <span class="p-tag" data-th="💙 ช่อแนะนำ" data-en="💙 Recommended">💙 ช่อแนะนำ</span>
+      <h3 data-th="ท้องฟ้า — ช่อดอกฟ้า" data-en="Sky Blue — Blue Bouquet">ท้องฟ้า — ช่อดอกฟ้า</h3>
+      <p data-th="ทิวลิปฟ้า • เดซี่ • ดอกเล็ก ห่อกระดาษโทนฟ้า-ขาว" data-en="Blue Tulips • Daisies • Small flowers wrapped in blue-white paper">ทิวลิปฟ้า • เดซี่ • ดอกเล็ก ห่อกระดาษโทนฟ้า-ขาว</p>
+      <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
     <div class="p-card" data-cat="bouquet">
       <div class="p-img" style="--bg:#fdeef9">
-        <img src="https://i.ibb.co/rK44sXgs/IMG-3737.jpg" alt="ช่อดอกไม้สีชมพู" class="product-photo zoomable">
+        <img src="https://i.ibb.co/rK44sXgs/IMG-3737.jpg" alt="Pink bouquet" class="product-photo zoomable">
       </div>
-      <h3>ชมพูอ่อน — ช่อดอกบัว</h3>
-      <p>ดอกบัวกำมะหยี่สีชมพูอ่อน นุ่มละมุน พร้อมริบบิ้น</p>
-      <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
+      <h3 data-th="ชมพูอ่อน — ช่อดอกบัว" data-en="Soft Pink — Pink Lotus Bouquet">ชมพูอ่อน — ช่อดอกบัว</h3>
+      <p data-th="ดอกบัวกำมะหยี่สีชมพูอ่อน นุ่มละมุน พร้อมริบบิ้น" data-en="Soft pink velvet lotus flowers, gentle and soft with ribbon">ดอกบัวกำมะหยี่สีชมพูอ่อน นุ่มละมุน พร้อมริบบิ้น</p>
+      <div class="p-foot"><strong>฿690</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
     <div class="p-card" data-cat="single">
       <div class="p-img" style="--bg:#fdf6ec">
-        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="ดอกเดซี่" class="product-photo zoomable">
+        <img src="https://i.ibb.co/HTzvHYKc/IMG-3733.jpg" alt="Single daisy" class="product-photo zoomable">
       </div>
-      <h3>เดซี่เดียว — ดอกเดซี่ก้านเดียว</h3>
-      <p>ดอกเดซี่ขาวกำมะหยี่ ก้านหุ้มเขียว มอบง่าย ให้ได้ทุกโอกาส</p>
-      <div class="p-foot"><strong>฿190</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
+      <h3 data-th="เดซี่เดียว — ดอกเดซี่ก้านเดียว" data-en="Single Daisy — One Stem">เดซี่เดียว — ดอกเดซี่ก้านเดียว</h3>
+      <p data-th="ดอกเดซี่ขาวกำมะหยี่ ก้านหุ้มเขียว มอบง่าย ให้ได้ทุกโอกาส" data-en="White velvet daisy, green wrapped stem. Simple gift for any occasion">ดอกเดซี่ขาวกำมะหยี่ ก้านหุ้มเขียว มอบง่าย ให้ได้ทุกโอกาส</p>
+      <div class="p-foot"><strong>฿190</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
     <div class="p-card" data-cat="card">
       <div class="p-img" style="--bg:#fff3d6">
-        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="การ์ดดอกไม้" class="product-photo zoomable">
+        <img src="https://i.ibb.co/CpkPmCZq/IMG-3735.jpg" alt="Flower card" class="product-photo zoomable">
       </div>
-      <h3>การ์ดดอกไม้กำมะหยี่</h3>
-      <p>การ์ดอวยพรติดดอกไม้กำมะหยี่ดอกเล็ก เขียนข้อความได้</p>
-      <div class="p-foot"><strong>฿120</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">สั่งซื้อ</a></div>
-    </div>
-  </div>
-</section>
-
-<section id="reviews" class="section">
-  <p class="eyebrow">REVIEWS</p>
-  <h2>เสียงจากคนพิเศษ</h2>
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"สั่งกระถางทานตะวันให้แม่ในวันเกิด แม่ชอบมาก บอกว่าสวยกว่าในรูปอีก งานละเอียดมากค่ะ"</p>
-      <div class="who">— น้องพลอย</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"ช่อสีฟ้าคือสวยตะโกน! ให้เพื่อนวันรับปริญญา เพื่อนกรี๊ดมาก เก็บไว้ได้ไม่เหี่ยว ความทรงจำอยู่ยาวเลยค่ะ"</p>
-      <div class="who">— พี่ฟ้า</div>
-    </div>
-    <div class="review-card">
-      <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"ส่งของไว แพ็กแน่นมาก แถมได้การ์ดเขียนมือด้วย สัมผัสได้ถึงความตั้งใจจริง จะสั่งอีกแน่นอนค่ะ"</p>
-      <div class="who">— คุณเมย์</div>
+      <h3 data-th="การ์ดดอกไม้กำมะหยี่" data-en="Velvet Flower Card">การ์ดดอกไม้กำมะหยี่</h3>
+      <p data-th="การ์ดอวยพรติดดอกไม้กำมะหยี่ดอกเล็ก เขียนข้อความได้" data-en="Greeting card with small velvet flower. Can add custom message">การ์ดอวยพรติดดอกไม้กำมะหยี่ดอกเล็ก เขียนข้อความได้</p>
+      <div class="p-foot"><strong>฿120</strong><a class="btn btn-green sm" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="สั่งซื้อ" data-en="Order Now">สั่งซื้อ</a></div>
     </div>
   </div>
 </section>
 
 <section id="why" class="alt">
   <div class="section">
-    <p class="eyebrow">WHY US</p>
-    <h2>ทำไมต้องแม่ตา</h2>
+    <p class="eyebrow" data-th="ทำไมต้องเรา" data-en="WHY US">ทำไมต้องเรา</p>
+    <h2 data-th="ทำไมต้องแม่ตา" data-en="Why Choose Mae Ta">ทำไมต้องแม่ตา</h2>
     <div class="why-grid">
-      <div class="why-card"><div class="ic">🌼</div><h3>ไม่เหี่ยว ไม่ต้องรดน้ำ</h3><p>เก็บไว้ได้หลายปี ความรักไม่โรยรา</p></div>
-      <div class="why-card"><div class="ic">🌸</div><h3>ทำมือทุกชิ้นโดยแม่</h3><p>ไม่มีงานโหล ทุกช่อมีชิ้นเดียวในโลก</p></div>
-      <div class="why-card"><div class="ic">🎨</div><h3>สั่งสีพิเศษได้</h3><p>บอกโทนสีที่ชอบ เดี๋ยวแม่จัดให้</p></div>
-      <div class="why-card"><div class="ic">🎁</div><h3>พร้อมมอบ</h3><p>บรรจุของขวัญเรียบร้อย ส่งทั่วไทย</p></div>
+      <div class="why-card"><div class="ic">🌼</div><h3 data-th="ไม่เหี่ยว ไม่ต้องรดน้ำ" data-en="Never Wilts">ไม่เหี่ยว ไม่ต้องรดน้ำ</h3><p data-th="เก็บไว้ได้หลายปี ความรักไม่โรยรา" data-en="Lasts for years, love never fades">เก็บไว้ได้หลายปี ความรักไม่โรยรา</p></div>
+      <div class="why-card"><div class="ic">🌸</div><h3 data-th="ทำมือทุกชิ้นโดยแม่" data-en="Handmade by Mae">ทำมือทุกชิ้นโดยแม่</h3><p data-th="ไม่มีงานโหล ทุกช่อมีชิ้นเดียวในโลก" data-en="No mass production, each piece is one-of-a-kind">ไม่มีงานโหล ทุกช่อมีชิ้นเดียวในโลก</p></div>
+      <div class="why-card"><div class="ic">🎨</div><h3 data-th="สั่งสีพิเศษได้" data-en="Custom Colors">สั่งสีพิเศษได้</h3><p data-th="บอกโทนสีที่ชอบ เดี๋ยวแม่จัดให้" data-en="Tell us your favorite colors, Mae will create it">บอกโทนสีที่ชอบ เดี๋ยวแม่จัดให้</p></div>
+      <div class="why-card"><div class="ic">🎁</div><h3 data-th="พร้อมมอบ" data-en="Ready to Gift">พร้อมมอบ</h3><p data-th="บรรจุของขวัญเรียบร้อย ส่งทั่วไทย" data-en="Beautifully packaged, delivery across Thailand">บรรจุของขวัญเรียบร้อย ส่งทั่วไทย</p></div>
     </div>
   </div>
 </section>
 
 <section id="story" class="section">
-  <p class="eyebrow">OUR STORY</p>
-  <h2>เรื่องราวของเรา</h2>
+  <p class="eyebrow" data-th="เรื่องราวของเรา" data-en="OUR STORY">เรื่องราวของเรา</p>
+  <h2 data-th="เรื่องราวของเรา" data-en="Our Story">เรื่องราวของเรา</h2>
   <div class="story-box">
-    <p>แม่ตาเริ่มทำดอกไม้กำมะหยี่จากงานอดิเรกที่รัก จนกลายเป็นร้านเล็ก ๆ ของครอบครัว ทุกช่อทำด้วยมือของแม่ด้วยความตั้งใจ ลูกสาวจึงนำเทคโนโลยีมาช่วยพาธุรกิจครอบครัวออนไลน์ เพื่อให้ทุกคนได้เข้าถึงดอกไม้ที่ไม่เหี่ยวเฉาเหล่านี้ได้ง่ายขึ้น 💛</p>
+    <p data-th="แม่ตาเริ่มทำดอกไม้กำมะหยี่จากงานอดิเรกที่รัก จนกลายเป็นร้านเล็ก ๆ ของครอบครัว ทุกช่อทำด้วยมือของแม่ด้วยความตั้งใจ ลูกสาวจึงนำเทคโนโลยีมาช่วยพาธุรกิจครอบครัวออนไลน์ เพื่อให้ทุกคนได้เข้าถึงดอกไม้ที่ไม่เหี่ยวเฉาเหล่านี้ได้ง่ายขึ้น 💛" data-en="Mae Ta started making velvet flowers as a hobby she loved, which became a small family business. Each bouquet is handmade by Mae with care. Her daughter brought technology to help bring this family business online, so everyone can easily access these everlasting flowers 💛">แม่ตาเริ่มทำดอกไม้กำมะหยี่จากงานอดิเรกที่รัก จนกลายเป็นร้านเล็ก ๆ ของครอบครัว ทุกช่อทำด้วยมือของแม่ด้วยความตั้งใจ ลูกสาวจึงนำเทคโนโลยีมาช่วยพาธุรกิจครอบครัวออนไลน์ เพื่อให้ทุกคนได้เข้าถึงดอกไม้ที่ไม่เหี่ยวเฉาเหล่านี้ได้ง่ายขึ้น </p>
   </div>
 </section>
 
 <section class="qz-section" id="quiz">
   <div class="qz-head">
-    <span class="qz-badge">✨ AI แนะนำ</span>
-    <h2>ดอกไม้ประจำนิสัยคุณ</h2>
-    <p>ตอบคำถาม 5 ข้อ แล้วให้ AI ของแม่ตาช่วยเลือกช่อที่ "ใช่" สำหรับคุณ</p>
+    <span class="qz-badge" data-th="✨ ทดสอบนิสัย" data-en="✨ Personality Quiz">✨ ทดสอบนิสัย</span>
+    <h2 data-th="ดอกไม้ประจำนิสัยคุณ" data-en="Your Perfect Flower Match">ดอกไม้ประจำนิสัยคุณ</h2>
+    <p data-th="ตอบคำถาม 5 ข้อ แล้วเราจะช่วยเลือกช่อที่เหมาะกับนิสัยคุณ" data-en="Answer 5 questions and we'll help you find the perfect bouquet for your personality">ตอบคำถาม 5 ข้อ แล้วเราจะช่วยเลือกช่อที่เหมาะกับนิสัยคุณ</p>
   </div>
   <div class="qz-card" id="quizCard">
     <div class="qz-progress">
-      <span id="quizStep">ข้อ 1 / 5</span>
+      <span id="quizStep"></span>
       <div class="qz-bar"><div id="quizBarFill"></div></div>
     </div>
     <h3 id="quizQuestion" class="qz-question"></h3>
@@ -344,8 +320,8 @@ body.dark .review-card .who{color:#a5d18a}
     <p id="resultDesc"></p>
     <div class="qz-product" id="resultProduct"></div>
     <div class="qz-actions">
-      <button class="qz-btn qz-btn-line" id="btnOrderLine">💬 สั่งช่อนี้ทาง Line</button>
-      <button class="qz-btn qz-btn-retry" id="btnRetry">🔄 ทำอีกครั้ง</button>
+      <button class="qz-btn qz-btn-line" id="btnOrderLine"></button>
+      <button class="qz-btn qz-btn-retry" id="btnRetry" data-th="🔄 ทำอีกครั้ง" data-en="🔄 Try Again">🔄 ทำอีกครั้ง</button>
     </div>
     <p class="qz-note" id="quizNote"></p>
   </div>
@@ -353,40 +329,71 @@ body.dark .review-card .who{color:#a5d18a}
 
 <section id="order" class="alt">
   <div class="section">
-    <p class="eyebrow">HOW TO ORDER</p>
-    <h2>สั่งง่ายใน 4 ขั้นตอน</h2>
+    <p class="eyebrow" data-th="วิธีสั่งซื้อ" data-en="HOW TO ORDER">วิธีสั่งซื้อ</p>
+    <h2 data-th="สั่งง่ายใน 4 ขั้นตอน" data-en="Easy 4-Step Process">สั่งง่ายใน 4 ขั้นตอน</h2>
     <div class="steps">
-      <div class="step"><span>1</span><h3>เลือกแบบ</h3><p>เลือกจากเว็บ หรือส่งรูปอ้างอิงมาก็ได้</p></div>
-      <div class="step"><span>2</span><h3>เลือกสี</h3><p>บอกโทนสีที่ชอบ หรือให้แม่เลือกให้</p></div>
-      <div class="step"><span>3</span><h3>แจ้งจัดทำ</h3><p>รอเวลาทำประมาณ 3–5 วัน</p></div>
-      <div class="step"><span>4</span><h3>ส่งคำสั่งซื้อ</h3><p>นัดรับหรือจัดส่งทางไปรษณีย์ทั่วไทย</p></div>
+      <div class="step"><span>1</span><h3 data-th="เลือกแบบ" data-en="Choose Design">เลือกแบบ</h3><p data-th="เลือกจากเว็บ หรือส่งรูปอ้างอิงมาก็ได้" data-en="Browse our website or send reference photo">เลือกจากเว็บ หรือส่งรูปอ้างอิงมาก็ได้</p></div>
+      <div class="step"><span>2</span><h3 data-th="เลือกสี" data-en="Select Colors">เลือกสี</h3><p data-th="บอกโทนสีที่ชอบ หรือให้แม่เลือกให้" data-en="Tell us your preferred colors or let Mae choose">บอกโทนสีที่ชอบ หรือให้แม่เลือกให้</p></div>
+      <div class="step"><span>3</span><h3 data-th="แม่จัดทำ" data-en="Place Order">แม่จัดทำ</h3><p data-th="ใช้เวลาทำประมาณ 3–5 วัน" data-en="Production time: 3-5 days">ใช้เวลาทำประมาณ 3–5 วัน</p></div>
+      <div class="step"><span>4</span><h3 data-th="ส่งคำสั่งซื้อ" data-en="Delivery">ส่งคำสั่งซื้อ</h3><p data-th="นัดรับหรือจัดส่งทางไปรษณีย์ทั่วไทย" data-en="Pickup or delivery via post across Thailand">นัดรับหรือจัดส่งทางไปรษณีย์ทั่วไทย</p></div>
     </div>
   </div>
 </section>
 
 <section id="contact" class="cta">
-  <h2>พร้อมส่งต่อความรักให้คนพิเศษหรือยัง 💌</h2>
-  <p>สั่งซื้อหรือสอบถามรายละเอียดเพิ่มเติมได้ที่ "แม่ตา Craft & Flower"</p>
+  <h2 data-th="พร้อมส่งต่อความรักให้คนพิเศษหรือยัง 💌" data-en="Ready to Send Love to Your Special Someone? 💌">พร้อมส่งต่อความรักให้คนพิเศษหรือยัง 💌</h2>
+  <p data-th='สั่งซื้อหรือสอบถามรายละเอียดเพิ่มเติมได้ที่ "แม่ตา Craft & Flower"' data-en='Contact us for orders or inquiries at "Mae Ta Craft & Flower"'>สั่งซื้อหรือสอบถามรายละเอียดเพิ่มเติมได้ที่ "แม่ตา Craft & Flower"</p>
   <div class="cta-buttons">
-    <a class="btn btn-white" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener">💬 สั่งผ่าน Line</a>
-    <a class="btn btn-outline-w" href="tel:0910602212">📞 091-060-2212</a>
+    <a class="btn btn-white" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" data-th="💬 สั่งผ่าน Line" data-en="💬 Chat on Line">💬 สั่งผ่าน Line</a>
+    <a class="btn btn-outline-w" href="tel:0910602212" data-th="📞 091-060-2212" data-en="📞 091-060-2212">📞 091-060-2212</a>
   </div>
   <p class="line-id">Line ID: <strong>tatoto2520</strong></p>
 </section>
 
-<footer><p>© <span id="year"></span> แม่ตา Craft & Flower — ทำด้วย 💛 เพื่อแม่</p></footer>
+<footer><p>© <span id="year"></span> <span data-th="แม่ตา Craft & Flower — ทำด้วย 💛 เพื่อแม่" data-en="Mae Ta Craft & Flower — Made with 💛 for Mae">แม่ตา Craft & Flower — ทำด้วย 💛 เพื่อแม่</span></p></footer>
 
-<a class="line-float" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" aria-label="ทัก Line">💬</a>
+<a class="line-float" href="https://line.me/ti/p/~tatoto2520" target="_blank" rel="noopener" aria-label="Chat on Line">💬</a>
 
 <div class="lightbox" id="lightbox" hidden>
-  <button class="lb-close" id="lbClose" aria-label="ปิด">✕</button>
-  <img id="lightboxImg" src="" alt="รูปขยาย">
-  <p class="lb-hint">แตะที่พื้นมืดเพื่อปิด</p>
+  <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+  <img id="lightboxImg" src="" alt="Enlarged view">
+  <p class="lb-hint" data-th="แตะที่พื้นมืดเพื่อปิด" data-en="Tap on dark background to close">แตะที่พื้นมืดเพื่อปิด</p>
 </div>
 
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 
+// ===== LANGUAGE SWITCHER =====
+let currentLang = localStorage.getItem('lang') || 'th';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+  document.getElementById('langBtn').textContent = lang === 'th' ? 'EN' : 'TH';
+  
+  document.querySelectorAll('[data-th]').forEach(el => {
+    if (!el.hasAttribute('data-th-html')) {
+      el.textContent = el.getAttribute('data-' + lang);
+    }
+  });
+  
+  document.querySelectorAll('[data-th-html]').forEach(el => {
+    el.innerHTML = el.getAttribute('data-' + lang + '-html');
+  });
+  
+  if (document.getElementById('quizCard').hidden === false) {
+    qzRender();
+  }
+}
+
+document.getElementById('langBtn').addEventListener('click', () => {
+  applyLanguage(currentLang === 'th' ? 'en' : 'th');
+});
+
+applyLanguage(currentLang);
+
+// ===== NAVBAR =====
 const navbar = document.getElementById('navbar');
 let lastY = window.scrollY;
 window.addEventListener('scroll', () => {
@@ -402,12 +409,14 @@ document.querySelectorAll('.nav-links a').forEach(a =>
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'))
 );
 
+// ===== THEME =====
 const themeBtn = document.getElementById('themeBtn');
 themeBtn.addEventListener('click', () => {
   const dark = document.body.classList.toggle('dark');
   themeBtn.textContent = dark ? '☀️' : '';
 });
 
+// ===== LIGHTBOX =====
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightboxImg');
 document.querySelectorAll('.zoomable').forEach(img => {
@@ -419,6 +428,7 @@ document.querySelectorAll('.zoomable').forEach(img => {
 document.getElementById('lbClose').addEventListener('click', () => lightbox.hidden = true);
 lightbox.addEventListener('click', e => { if (e.target === lightbox) lightbox.hidden = true; });
 
+// ===== FILTERS =====
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -430,56 +440,126 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
+// ===== QUIZ =====
 const FLOWERS = {
-  sun:   { emoji:"🌻", title:"คุณคือ \"ทานตะวัน\" — ดวงอาทิตย์ประจำกลุ่ม",
-           desc:"สดใส จริงใจ พลังงานบวกเต็มเปี่ยม อยู่ใกล้แล้วมีความสุข คุณคอยส่องแสงให้กำลังใจคนรอบข้างเสมอ",
-           product:"ช่อแนะนำ: \"แดดอุ่น\" กระถางทานตะวัน — ฿590",
-           lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"แดดอุ่น\" กระถางทานตะวัน (฿590) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ" },
-  tulip: { emoji:"🌷", title:"คุณคือ \"ทิวลิป\" — อ่อนโยน ใส่ใจทุกรายละเอียด",
-           desc:"คุณอบอุ่น สุภาพ และจำเรื่องเล็ก ๆ ของคนสำคัญได้เสมอ ของขวัญจากคุณจึงกินใจทุกครั้ง",
-           product:"ช่อแนะนำ: \"ของขวัญพิเศษ\" ช่อทิวลิป — ฿890",
-           lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"ของขวัญพิเศษ\" ช่อทิวลิป (฿890) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ" },
-  daisy: { emoji:"🌼", title:"คุณคือ \"เดซี่\" — ร่าเริง เป็นกันเอง",
-           desc:"คุณทำให้เรื่องธรรมดาสนุกขึ้นได้เสมอ ใครได้อยู่ใกล้ก็พลอยยิ้มตามไปด้วย",
-           product:"ช่อแนะนำ: ช่อเดซี่ขาวสดใส — เริ่มต้น ฿590",
-           lineMsg:"สวัสดีค่ะ สนใจสั่งช่อเดซี่ขาวสดใส (เริ่มต้น ฿590) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ" },
-  lotus: { emoji:"🪷", title:"คุณคือ \"ดอกบัว\" — สงบ นุ่มลึก น่าเคารพ",
-           desc:"คุณคิดก่อนพูด มีสติ และเป็นที่พึ่งทางใจของคนรอบข้างได้เสมอ",
-           product:"ช่อแนะนำ: ช่อดอกบัวชมพู — เริ่มต้น ฿690",
-           lineMsg:"สวัสดีค่ะ สนใจสั่งช่อดอกบัวชมพู (เริ่มต้น ฿690) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ" },
-  blue:  { emoji:"🩵", title:"คุณคือ \"ช่อดอกฟ้า\" — นักสร้างสรรค์ผู้ไม่ซ้ำใคร",
-           desc:"คุณมีความฝันและไอเดียแปลกใหม่เสมอ โลกของคุณมีสีสันที่ไม่มีใครเลียนแบบได้",
-           product:"ช่อแนะนำ: \"ท้องฟ้า\" ช่อดอกฟ้า — ฿690",
-           lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"ท้องฟ้า\" ช่อดอกฟ้า (฿690) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ" }
+  sun: {
+    th: { emoji:"🌻", title:"คุณคือ \"ทานตะวัน\" — ดวงอาทิตย์ประจำกลุ่ม",
+          desc:"สดใส จริงใจ พลังงานบวกเต็มเปี่ยม อยู่ใกล้แล้วมีความสุข คุณคอยส่องแสงให้กำลังใจคนรอบข้างเสมอ",
+          product:"ช่อแนะนำ: \"แดดอุ่น\" กระถางทานตะวัน — ฿590",
+          lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"แดดอุ่น\" กระถางทานตะวัน (฿590) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ",
+          btnText:"💬 สั่งช่อนี้ทาง Line", note:"คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย" },
+    en: { emoji:"🌻", title:"You're a \"Sunflower\" — The Sunshine of the Group",
+          desc:"Bright, genuine, full of positive energy. You bring joy and encouragement to those around you, always shining light on others.",
+          product:"Recommended: \"Sunshine\" Sunflower Pot — ฿590",
+          lineMsg:"Hello, I'm interested in ordering the \"Sunshine\" Sunflower Pot (฿590) from the personality quiz.",
+          btnText:"💬 Order via Line", note:"Message copied! ✔ Paste it in Line chat." }
+  },
+  tulip: {
+    th: { emoji:"🌷", title:"คุณคือ \"ทิวลิป\" — อ่อนโยน ใส่ใจทุกรายละเอียด",
+          desc:"คุณอบอุ่น สุภาพ และจำเรื่องเล็ก ๆ ของคนสำคัญได้เสมอ ของขวัญจากคุณจึงกินใจทุกครั้ง",
+          product:"ช่อแนะนำ: \"ของขวัญพิเศษ\" ช่อทิวลิป — ฿890",
+          lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"ของขวัญพิเศษ\" ช่อทิวลิป (฿890) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ",
+          btnText:"💬 สั่งช่อนี้ทาง Line", note:"คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย" },
+    en: { emoji:"🌷", title:"You're a \"Tulip\" — Gentle and Thoughtful",
+          desc:"You're warm, polite, and remember the little details about important people. Your gifts are always meaningful.",
+          product:"Recommended: \"Special Gift\" Tulip Bouquet — ฿890",
+          lineMsg:"Hello, I'm interested in ordering the \"Special Gift\" Tulip Bouquet (฿890) from the personality quiz.",
+          btnText:"💬 Order via Line", note:"Message copied! ✔ Paste it in Line chat." }
+  },
+  daisy: {
+    th: { emoji:"🌼", title:"คุณคือ \"เดซี่\" — ร่าเริง เป็นกันเอง",
+          desc:"คุณทำให้เรื่องธรรมดาสนุกขึ้นได้เสมอ ใครได้อยู่ใกล้ก็พลอยยิ้มตามไปด้วย",
+          product:"ช่อแนะนำ: ช่อเดซี่ขาวสดใส — เริ่มต้น ฿590",
+          lineMsg:"สวัสดีค่ะ สนใจสั่งช่อเดซี่ขาวสดใส (เริ่มต้น ฿590) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ",
+          btnText:"💬 สั่งช่อนี้ทาง Line", note:"คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย" },
+    en: { emoji:"🌼", title:"You're a \"Daisy\" — Cheerful and Friendly",
+          desc:"You can make ordinary things fun. People around you can't help but smile when they're with you.",
+          product:"Recommended: Fresh White Daisy Bouquet — Starting ฿590",
+          lineMsg:"Hello, I'm interested in ordering the Fresh White Daisy Bouquet (Starting ฿590) from the personality quiz.",
+          btnText:"💬 Order via Line", note:"Message copied! ✔ Paste it in Line chat." }
+  },
+  lotus: {
+    th: { emoji:"🪷", title:"คุณคือ \"ดอกบัว\" — สงบ นุ่มลึก น่าเคารพ",
+          desc:"คุณคิดก่อนพูด มีสติ และเป็นที่พึ่งทางใจของคนรอบข้างได้เสมอ",
+          product:"ช่อแนะนำ: ช่อดอกบัวชมพู — เริ่มต้น ฿690",
+          lineMsg:"สวัสดีค่ะ สนใจสั่งช่อดอกบัวชมพู (เริ่มต้น ฿690) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ",
+          btnText:"💬 สั่งช่อนี้ทาง Line", note:"คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย" },
+    en: { emoji:"🪷", title:"You're a \"Lotus\" — Calm, Deep, Respectful",
+          desc:"You think before you speak, mindful, and always a source of emotional support for those around you.",
+          product:"Recommended: Pink Lotus Bouquet — Starting ฿690",
+          lineMsg:"Hello, I'm interested in ordering the Pink Lotus Bouquet (Starting ฿690) from the personality quiz.",
+          btnText:" Order via Line", note:"Message copied! ✔ Paste it in Line chat." }
+  },
+  blue: {
+    th: { emoji:"", title:"คุณคือ \"ช่อดอกฟ้า\" — นักสร้างสรรค์ผู้ไม่ซ้ำใคร",
+          desc:"คุณมีความฝันและไอเดียแปลกใหม่เสมอ โลกของคุณมีสีสันที่ไม่มีใครเลียนแบบได้",
+          product:"ช่อแนะนำ: \"ท้องฟ้า\" ช่อดอกฟ้า — ฿690",
+          lineMsg:"สวัสดีค่ะ สนใจสั่งช่อ \"ท้องฟ้า\" ช่อดอกฟ้า (฿690) จากผลทดสอบดอกไม้ประจำนิสัยค่ะ",
+          btnText:"💬 สั่งช่อนี้ทาง Line", note:"คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย" },
+    en: { emoji:"🩵", title:"You're a \"Blue Bouquet\" — The Creative Unique Soul",
+          desc:"You always have dreams and fresh ideas. Your world has colors that no one can imitate.",
+          product:"Recommended: \"Sky Blue\" Blue Bouquet — ฿690",
+          lineMsg:"Hello, I'm interested in ordering the \"Sky Blue\" Blue Bouquet (฿690) from the personality quiz.",
+          btnText:"💬 Order via Line", note:"Message copied! ✔ Paste it in Line chat." }
+  }
 };
 
-const QUIZ = [
-  { q:"วันหยุดในอุดมคติของคุณคือ?", o:[
-    ["🎉 ออกเที่ยวเจอเพื่อนฝูง สนุกเต็มที่","sun"],
-    ["🧁 อยู่บ้านทำขนม จัดห้องชิล ๆ","tulip"],
-    ["📖 จิบชา อ่านหนังสือเงียบ ๆ","lotus"],
-    ["🎨 ทำงานคราฟต์ วาดรูป ลองไอเดียใหม่","blue"] ]},
-  { q:"สีไหนใช่คุณที่สุด?", o:[
-    ["💛 เหลืองสดใส","sun"],
-    ["🤍 ครีม-พาสเทลนุ่ม ๆ","tulip"],
-    ["✨ ขาวมินิมอล","daisy"],
-    ["🩵 ฟ้าสบายตา","blue"] ]},
-  { q:"เวลาเพื่อนสนิทเศร้า คุณจะทำอะไร?", o:[
-    ["🌈 ชวนออกไปเที่ยวแก้เซ็ง","sun"],
-    ["🫂 นั่งฟังเงียบ ๆ แล้วกอดปลอบ","tulip"],
-    ["🧠 ช่วยคิดหาทางแก้ปัญหาให้","lotus"],
-    [" ส่งมีมตลก ๆ ให้ยิ้มออก","daisy"] ]},
-  { q:"สไตล์การให้ของขวัญของคุณคือ?", o:[
-    ["🎈 ของน่ารัก ๆ เรียกเสียงหัวเราะ","daisy"],
-    ["✂️ ของแฮนด์เมดทำเองด้วยใจ","tulip"],
-    ["🎁 ของใช้ได้จริง มีคุณภาพ","lotus"],
-    ["🔮 ของไม่เหมือนใคร มีความหมายซ่อนอยู่","blue"] ]},
-  { q:"เพลงแนวไหนที่เปิดบ่อยสุด?", o:[
-    ["🕺 เพลงจังหวะสนุก ชวนเต้น","daisy"],
-    ["🎤 เพลงป็อปสดใส ฟังแล้วยิ้ม","sun"],
-    ["🎧 เพลงช้า ความหมายลึกซึ้ง","lotus"],
-    ["🎸 เพลงอินดี้ แนวแปลกใหม่","blue"] ]}
-];
+const QUIZ = {
+  th: [
+    { q:"วันหยุดในอุดมคติของคุณคือ?", o:[
+      ["🎉 ออกเที่ยวเจอเพื่อนฝูง สนุกเต็มที่","sun"],
+      ["🧁 อยู่บ้านทำขนม จัดห้องชิล ๆ","tulip"],
+      ["📖 จิบชา อ่านหนังสือเงียบ ๆ","lotus"],
+      ["🎨 ทำงานคราฟต์ วาดรูป ลองไอเดียใหม่","blue"] ]},
+    { q:"สีไหนใช่คุณที่สุด?", o:[
+      ["💛 เหลืองสดใส","sun"],
+      ["🤍 ครีม-พาสเทลนุ่ม ๆ","tulip"],
+      ["✨ ขาวมินิมอล","daisy"],
+      ["🩵 ฟ้าสบายตา","blue"] ]},
+    { q:"เวลาเพื่อนสนิทเศร้า คุณจะทำอะไร?", o:[
+      ["🌈 ชวนออกไปเที่ยวแก้เซ็ง","sun"],
+      ["🫂 นั่งฟังเงียบ ๆ แล้วกอดปลอบ","tulip"],
+      ["🧠 ช่วยคิดหาทางแก้ปัญหาให้","lotus"],
+      ["😂 ส่งมีมตลก ๆ ให้ยิ้มออก","daisy"] ]},
+    { q:"สไตล์การให้ของขวัญของคุณคือ?", o:[
+      ["🎈 ของน่ารัก ๆ เรียกเสียงหัวเราะ","daisy"],
+      ["✂️ ของแฮนด์เมดทำเองด้วยใจ","tulip"],
+      ["🎁 ของใช้ได้จริง มีคุณภาพ","lotus"],
+      ["🔮 ของไม่เหมือนใคร มีความหมายซ่อนอยู่","blue"] ]},
+    { q:"เพลงแนวไหนที่เปิดบ่อยสุด?", o:[
+      [" เพลงจังหวะสนุก ชวนเต้น","daisy"],
+      ["🎤 เพลงป็อปสดใส ฟังแล้วยิ้ม","sun"],
+      ["🎧 เพลงช้า ความหมายลึกซึ้ง","lotus"],
+      ["🎸 เพลงอินดี้ แนวแปลกใหม่","blue"] ]}
+  ],
+  en: [
+    { q:"Your ideal weekend is?", o:[
+      ["🎉 Going out with friends, having fun","sun"],
+      ["🧁 Staying home, baking, organizing","tulip"],
+      [" Sipping tea, reading quietly","lotus"],
+      ["🎨 Crafting, drawing, trying new ideas","blue"] ]},
+    { q:"Which color suits you best?", o:[
+      ["💛 Bright yellow","sun"],
+      ["🤍 Cream-pastel soft tones","tulip"],
+      ["✨ White minimalist","daisy"],
+      ["🩵 Comfortable blue","blue"] ]},
+    { q:"When your best friend is sad, you?", o:[
+      ["🌈 Take them out to cheer up","sun"],
+      ["🫂 Listen quietly and hug them","tulip"],
+      ["🧠 Help them solve the problem","lotus"],
+      [" Send funny memes to make them smile","daisy"] ]},
+    { q:"Your gift-giving style is?", o:[
+      ["🎈 Cute things that make people laugh","daisy"],
+      ["✂️ Handmade gifts from the heart","tulip"],
+      ["🎁 Practical, quality items","lotus"],
+      ["🔮 Unique items with hidden meaning","blue"] ]},
+    { q:"What music genre do you listen to most?", o:[
+      ["🕺 Upbeat, danceable music","daisy"],
+      ["🎤 Bright pop music","sun"],
+      ["🎧 Slow, meaningful songs","lotus"],
+      ["🎸 Indie, unique style","blue"] ]}
+  ]
+};
 
 let qzIndex = 0;
 let qzScore = {};
@@ -493,9 +573,11 @@ function qzStart(){
   qzRender();
 }
 function qzRender(){
-  const item = QUIZ[qzIndex];
-  document.getElementById('quizStep').textContent = 'ข้อ ' + (qzIndex+1) + ' / ' + QUIZ.length;
-  document.getElementById('quizBarFill').style.width = (qzIndex / QUIZ.length * 100) + '%';
+  const lang = currentLang;
+  const item = QUIZ[lang][qzIndex];
+  const stepText = lang === 'th' ? 'ข้อ ' : 'Question ';
+  document.getElementById('quizStep').textContent = stepText + (qzIndex+1) + ' / ' + QUIZ[lang].length;
+  document.getElementById('quizBarFill').style.width = (qzIndex / QUIZ[lang].length * 100) + '%';
   document.getElementById('quizQuestion').textContent = item.q;
   const box = document.getElementById('quizOptions');
   box.innerHTML = '';
@@ -510,31 +592,38 @@ function qzRender(){
 function qzAnswer(val){
   qzScore[val]++;
   qzIndex++;
-  if (qzIndex < QUIZ.length){ qzRender(); return; }
+  const lang = currentLang;
+  if (qzIndex < QUIZ[lang].length){ qzRender(); return; }
   document.getElementById('quizBarFill').style.width = '100%';
-  document.getElementById('quizQuestion').textContent = '🤖 AI กำลังวิเคราะห์นิสัยคุณ...';
+  const analyzingText = lang === 'th' ? '🤖 กำลังวิเคราะห์นิสัยคุณ...' : '🤖 Analyzing your personality...';
+  document.getElementById('quizQuestion').textContent = analyzingText;
   document.getElementById('quizOptions').innerHTML = '';
   setTimeout(qzShowResult, 1200);
 }
 function qzShowResult(){
+  const lang = currentLang;
   let best = 'sun', max = -1;
   for (const k in qzScore){ if (qzScore[k] > max){ max = qzScore[k]; best = k; } }
-  const f = FLOWERS[best];
+  const f = FLOWERS[best][lang];
   document.getElementById('quizCard').hidden = true;
   document.getElementById('quizResult').hidden = false;
   document.getElementById('resultEmoji').textContent = f.emoji;
   document.getElementById('resultTitle').textContent = f.title;
   document.getElementById('resultDesc').textContent = f.desc;
   document.getElementById('resultProduct').textContent = f.product;
+  document.getElementById('btnOrderLine').textContent = f.btnText;
   document.getElementById('btnOrderLine').dataset.msg = f.lineMsg;
+  document.getElementById('btnOrderLine').dataset.note = f.note;
 }
 document.getElementById('btnRetry').addEventListener('click', qzStart);
 document.getElementById('btnOrderLine').addEventListener('click', async function(){
+  const lang = currentLang;
   const msg = this.dataset.msg || '';
+  const note = this.dataset.note || '';
   try {
     await navigator.clipboard.writeText(msg);
-    document.getElementById('quizNote').textContent = 'คัดลอกข้อความสั่งซื้อแล้ว ✔ กดวาง (paste) ใน Line ได้เลย';
-  } catch(e) { prompt('คัดลอกข้อความด้านล่าง:', msg); }
+    document.getElementById('quizNote').textContent = note;
+  } catch(e) { prompt(lang === 'th' ? 'คัดลอกข้อความด้านล่าง:' : 'Copy this message:', msg); }
   window.open('https://line.me/ti/p/~tatoto2520', '_blank');
 });
 qzStart();
